@@ -31,6 +31,7 @@ class MainScreen extends StatelessWidget {
           ],
         ),
         body: SafeArea(
+          //ios, 안드로이드. 노치 씌울때 필요하다.
           child: Column(children: [
             Container(
               height: 200,
@@ -178,93 +179,92 @@ class MainScreen extends StatelessWidget {
               ],
             ),
             Expanded(
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => (const HeroP())),
-                              );
-                            },
-                            child: Hero(
-                              tag: 'area',
-                              child: Container(
-                                decoration: const BoxDecoration(),
-                                width: 100,
-                                height: 100,
-                                child: Image.network(
-                                  'https://i.namu.wiki/i/UTOq11GtqLrCArGirbl1kz4Rzl0s2v0pKMGdntgzUTzyT9e6mZoY00U06znwF3VSAeZcn4_X_MZlZ6N_j4bOSg.webp',
-                                  fit: BoxFit.cover,
+              child: SingleChildScrollView(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(1.0),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (const HeroP())),
+                                );
+                              },
+                              child: Hero(
+                                tag: 'area',
+                                child: Container(
+                                  decoration: const BoxDecoration(),
+                                  width: 100,
+                                  height: 100,
+                                  child: Image.network(
+                                    'https://i.namu.wiki/i/UTOq11GtqLrCArGirbl1kz4Rzl0s2v0pKMGdntgzUTzyT9e6mZoY00U06znwF3VSAeZcn4_X_MZlZ6N_j4bOSg.webp',
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        const Expanded(
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(4.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "웃는 잔망루피",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.star_border,
-                                          color: Colors.yellow,
+                          const Expanded(
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "웃는 잔망루피",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        Text('4.9'),
-                                      ],
-                                    ),
-                                  ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.star_border,
+                                            color: Colors.yellow,
+                                          ),
+                                          Text('4.9'),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(4.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.map_outlined),
-                                    Text('대한민국'),
-                                  ],
+                                Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.map_outlined),
+                                      Text('대한민국'),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(4.0),
-                                child: Row(
-                                  children: [
-                                    Text('서울특별시 문래역'),
-                                  ],
+                                Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Row(
+                                    children: [
+                                      Text('서울특별시 문래역'),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Container(
                             decoration: const BoxDecoration(),
@@ -326,8 +326,8 @@ class MainScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ]),
